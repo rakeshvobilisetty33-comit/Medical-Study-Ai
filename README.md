@@ -52,41 +52,66 @@ medstudy-ai/
 ## 4. Setup & Installation
 
 ### Prerequisites
-* **Node.js** (v18 or higher recommended)
-* **MongoDB** (running locally at `mongodb://localhost:27017` or a MongoDB Atlas connection cloud URI)
+* **Node.js**: v18 or higher (v20+ recommended)
+* **Git**: Installed on your system
+* **MongoDB (Optional)**: If not installed or running, the application will automatically activate its built-in **offline JSON database fallback**, writing persistent data directly to `server/data/`. This allows full feature access immediately with zero database dependencies.
 
 ### Setup Steps
-1. **Clone/Move into Workspace**:
-   Ensure you are in the project root directory.
 
-2. **Configure Environment Variables**:
-   Create a `.env` file inside the `server/` directory:
-   ```env
-   PORT=5000
-   MONGO_URI=mongodb://localhost:27017/medstudy
-   AI_PROVIDER=mock  # 'gemini' | 'openai' | 'mock'
-   
-   # Optional: Add keys to activate external AI models
-   # GEMINI_API_KEY=your_gemini_key_here
-   # OPENAI_API_KEY=your_openai_key_here
+1. **Clone the Repository**:
+   Clone the repository from GitHub and navigate into the root directory:
+   ```bash
+   git clone https://github.com/janagarlabhavana-07/medicalstudy.git
+   cd medicalstudy
    ```
 
+2. **Configure Environment Variables**:
+   Copy the example environment configuration template to create your active `.env` file in the `server/` directory:
+   * **Linux/macOS**:
+     ```bash
+     cp .env.example server/.env
+     ```
+   * **Windows (Command Prompt / PowerShell)**:
+     ```cmd
+     copy .env.example server\.env
+     ```
+
+   Verify the variables inside `server/.env`:
+   * `PORT`: Server API port (default: `5000`)
+   * `MONGO_URI`: MongoDB connection string (default: `mongodb://127.0.0.1:27017/medstudy`). If offline or MongoDB isn't running, the server switches to local JSON files in `server/data/`.
+   * `AI_PROVIDER`: Choose `mock` (offline, default), `gemini`, or `openai`.
+   * `GEMINI_API_KEY` / `OPENAI_API_KEY`: API keys for active providers.
+
 3. **Install Dependencies**:
-   Install all dependencies for root, client, and server:
+   Install root dev dependencies first, then install package trees for both client and server:
    ```bash
+   # Install root packages
+   npm install
+
+   # Install client and server packages
    npm run install:all
    ```
 
-4. **Launch Development Servers**:
-   Run both client and server development servers concurrently:
-   ```bash
-   npm run dev
-   ```
-   * The Express API will start on: `http://localhost:5000`
-   * The Vite client will launch on: `http://localhost:5173` (with `/api` proxying active)
+4. **Running the Application**:
+   You can start both the client and server concurrently using a single command, or start them individually:
+   * **Concurrent Mode (Recommended)**:
+     ```bash
+     npm run dev
+     ```
+     * The Express API starts on `http://localhost:5000`
+     * The Vite client starts on `http://localhost:5173` (with proxy forwarding to the backend)
+   * **Start Backend Only**:
+     ```bash
+     npm run start:server
+     ```
+   * **Start Frontend Only**:
+     ```bash
+     npm run start:client
+     ```
 
 5. **Build for Production**:
-   To test compile parameters and verify TSC rules:
+   Compile frontend assets to verify type checking and generate static production bundles:
    ```bash
    npm run build:client
    ```
+
