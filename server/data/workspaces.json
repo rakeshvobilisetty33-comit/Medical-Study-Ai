@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Physiology Workspace",
+    "subject": "Physiology",
+    "topic": "Cardiac Cycle",
+    "userId": "default_user",
+    "_id": "6a7992b91b4663999c1a38e8",
+    "createdAt": "2026-08-10T08:58:34.019Z"
+  },
+  {
+    "title": "Biochemistry Workspace",
+    "subject": "Biochemistry",
+    "userId": "default_user",
+    "_id": "6a79939fa6832592be4f3bcf",
+    "createdAt": "2026-08-10T09:02:23.564Z"
+  }
+]
