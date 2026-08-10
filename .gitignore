@@ -19,3 +19,12 @@ npm-debug.log*
 # System files
 .DS_Store
 Thumbs.db
+
+# Build outputs
+build/
+uploads/
+server/uploads/
+server/data/
+.env.*
+!.env.example
+
