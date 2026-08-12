@@ -6,6 +6,11 @@ const flashcardSchema = new mongoose.Schema({
     ref: 'Workspace',
     required: true
   },
+  topic: {
+    type: String,
+    trim: true,
+    default: ''
+  },
   deckName: {
     type: String,
     default: 'General'

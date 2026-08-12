@@ -5,6 +5,11 @@ const reminderSchema = new mongoose.Schema({
     type: String,
     default: 'default_user'
   },
+  workspaceId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Workspace',
+    default: null
+  },
   subject: {
     type: String,
     required: true,
@@ -19,9 +24,23 @@ const reminderSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
-  message: {
+  duration: {
+    type: Number,
+    default: 60
+  },
+  priority: {
     type: String,
-    trim: true
+    enum: ['low', 'medium', 'high'],
+    default: 'medium'
+  },
+  notes: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  completed: {
+    type: Boolean,
+    default: false
   },
   active: {
     type: Boolean,

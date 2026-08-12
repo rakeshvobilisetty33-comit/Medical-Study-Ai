@@ -12,12 +12,15 @@ export const generateQuiz = async (req, res) => {
 
     // 1. Fetch available texts in this workspace
     const sources = await Source.find({ workspaceId, status: 'ready' });
-    let contextText = '';
     
-    if (sources && sources.length > 0) {
-      // Gather some text for context
-      contextText = sources.map(s => s.rawText.substring(0, 3000)).join('\n');
+    if (!sources || sources.length === 0) {
+      return res.status(400).json({ 
+        error: 'No study material found in this workspace. Please upload some notes or documents first.' 
+      });
     }
+
+    // Gather some text for context
+    const contextText = sources.map(s => s.rawText.substring(0, 3000)).join('\n');
 
     const systemPrompt = `You are a professional medical school examiner.
 Generate exactly ${numQuestions} multiple-choice questions (MCQs) of ${difficulty} difficulty on the topic of "${topic || 'General Medical Concepts'}".
@@ -39,9 +42,41 @@ Each question object MUST have the following structure:
     // 2. Query LLM with JSON mode enabled
     const quizQuestions = await queryLLM(systemPrompt, userPrompt, true);
 
+    // Validate and normalize generated questions
+    quizQuestions.forEach((q) => {
+      // Ensure options is a valid array of strings
+      if (!q.options || !Array.isArray(q.options) || q.options.length < 2) {
+        q.options = ['Option A', 'Option B', 'Option C', 'Option D'];
+      }
+      q.options = q.options.map(opt => String(opt).trim());
+
+      // Normalize correctAnswer
+      if (!q.correctAnswer) {
+        q.correctAnswer = q.options[0];
+      } else {
+        const correctStr = String(q.correctAnswer).trim();
+        const letterIndex = ['A', 'B', 'C', 'D'].indexOf(correctStr.toUpperCase());
+        
+        if (letterIndex > -1 && q.options[letterIndex]) {
+          q.correctAnswer = q.options[letterIndex];
+        } else if (!isNaN(Number(correctStr)) && q.options[parseInt(correctStr, 10)]) {
+          q.correctAnswer = q.options[parseInt(correctStr, 10)];
+        } else {
+          const matched = q.options.find(opt => opt.toLowerCase() === correctStr.toLowerCase());
+          if (matched) {
+            q.correctAnswer = matched;
+          } else {
+            console.warn(`MCQ correctAnswer mismatch: "${correctStr}" not found in options. Defaulting to first option.`);
+            q.correctAnswer = q.options[0];
+          }
+        }
+      }
+    });
+
     // 3. Save quiz to database
     const newQuiz = new Quiz({
       workspaceId,
+      topic: topic || '',
       title: `${topic || 'Practice'} Quiz (${difficulty})`,
       questions: quizQuestions,
       difficulty,
@@ -54,7 +89,13 @@ Each question object MUST have the following structure:
 
   } catch (error) {
     console.error('Quiz generation error:', error);
-    return res.status(500).json({ error: `Failed to generate quiz: ${error.message}` });
+    let userMessage = 'An unexpected error occurred while generating the quiz.';
+    if (error.name === 'MongooseError' || error.message.includes('buffering timed out') || error.message.includes('Mongo')) {
+      userMessage = 'Failed to generate quiz due to a database connection issue. Please try again later.';
+    } else if (error.message) {
+      userMessage = error.message;
+    }
+    return res.status(500).json({ error: userMessage });
   }
 };
 
@@ -113,8 +154,10 @@ export const submitQuiz = async (req, res) => {
 
 export const getQuizzes = async (req, res) => {
   try {
-    const { workspaceId } = req.query;
-    const query = workspaceId ? { workspaceId } : {};
+    const { workspaceId, topic } = req.query;
+    const query = {};
+    if (workspaceId) query.workspaceId = workspaceId;
+    if (topic) query.topic = topic;
     const quizzes = await Quiz.find(query).sort({ createdAt: -1 });
     return res.status(200).json(quizzes);
   } catch (error) {

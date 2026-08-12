@@ -33,6 +33,10 @@ const quizSchema = new mongoose.Schema({
     ref: 'Workspace',
     required: true
   },
+  topic: {
+    type: String,
+    default: ''
+  },
   title: {
     type: String,
     default: 'Practice Quiz'

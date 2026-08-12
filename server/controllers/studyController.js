@@ -21,9 +21,14 @@ export const generateRevisionNotes = async (req, res) => {
     if (!workspaceId) return res.status(400).json({ error: 'Workspace ID is required' });
 
     const context = await getWorkspaceContext(workspaceId);
+    if (!context) {
+      return res.status(400).json({ error: 'No source material is available for this workspace. Please upload some study files first.' });
+    }
 
     const systemPrompt = `You are a medical school physiology and pathology professor.
 Generate comprehensive, highly structured revision notes for "${topic || 'the selected topic'}".
+Use ONLY the provided study materials as your source. Do not invent or extrapolate medical facts, statistics, classifications, or lists that are not supported by the study text.
+If the study material does not contain sufficient details for a specific section, state "Sufficient data not available in source materials" rather than writing generic textbook knowledge.
 Use standard academic formatting. Use sections with bold titles. Use tables or lists for readability.
 
 Format your response in Markdown containing:
@@ -46,29 +51,76 @@ Format your response in Markdown containing:
   }
 };
 
-// 2. Visual flowchart generation (Mermaid format)
+// 2. Visual flowchart/mindmap generation (Structured JSON format)
 export const generateVisualLearning = async (req, res) => {
   try {
-    const { workspaceId, topic } = req.body;
+    const { workspaceId, topic, type = 'flowchart' } = req.body;
     if (!workspaceId) return res.status(400).json({ error: 'Workspace ID is required' });
 
     const context = await getWorkspaceContext(workspaceId);
 
-    const systemPrompt = `You are a medical visual designer.
-Create a step-by-step process flowchart or mind map in Mermaid.js syntax representing the biological pathway or mechanism for: "${topic}".
-Generate ONLY valid Mermaid syntax inside a markdown code block (\`\`\`mermaid ... \`\`\`).
-After the Mermaid block, add a clear, step-by-step text description explaining each node of the diagram.
+    const systemPrompt = `You are a medical visual designer and educator.
+Generate a structured JSON object representing a ${type} for the topic "${topic}".
+Only include information directly supported by the student's study material. Do not extrapolate beyond the source text context.
 
-Example structure:
-\`\`\`mermaid
-graph TD
-    A[Initial trigger] --> B[Secondary step]
-    B --> C[Final outcome]
-\`\`\``;
+The response MUST be a valid JSON object matching this schema:
+{
+  "type": "${type}",
+  "title": "Clear central topic title",
+  "nodes": [
+    {
+      "id": "A unique short string ID (e.g. '1', '2', '3' or node name)",
+      "label": "Concise node title (maximum 3-5 words)",
+      "description": "Short explanation or clinical context"
+    }
+  ],
+  "edges": [
+    {
+      "source": "ID of the source node",
+      "target": "ID of the target node",
+      "label": "Optional label describing the relationship/cause (e.g. 'triggers', 'leads to')"
+    }
+  ]
+}`;
 
-    const userPrompt = `Context from materials:\n${context}\n\nGenerate visual flowchart for: ${topic}`;
-    const result = await queryLLM(systemPrompt, userPrompt, false);
-    return res.status(200).json({ markdown: result });
+    const userPrompt = `Context from materials:\n${context}\n\nGenerate visual ${type} structure for: ${topic}`;
+    const result = await queryLLM(systemPrompt, userPrompt, true);
+
+    // Validate response structure (Response validation layer)
+    const data = result || {};
+    data.type = data.type || type;
+    data.title = data.title || `Visual Pathway: ${topic}`;
+    
+    if (!Array.isArray(data.nodes)) {
+      data.nodes = [];
+    }
+    
+    // Filter duplicates and ensure required fields
+    const seenNodeIds = new Set();
+    data.nodes = data.nodes.filter((node) => {
+      if (!node || !node.id || !node.label) return false;
+      node.id = String(node.id).trim();
+      node.label = String(node.label).trim();
+      node.description = String(node.description || '').trim();
+      if (seenNodeIds.has(node.id)) return false;
+      seenNodeIds.add(node.id);
+      return true;
+    });
+
+    if (!Array.isArray(data.edges)) {
+      data.edges = [];
+    }
+
+    // Validate edges point to existing nodes
+    data.edges = data.edges.filter((edge) => {
+      if (!edge || !edge.source || !edge.target) return false;
+      edge.source = String(edge.source).trim();
+      edge.target = String(edge.target).trim();
+      edge.label = String(edge.label || '').trim();
+      return seenNodeIds.has(edge.source) && seenNodeIds.has(edge.target);
+    });
+
+    return res.status(200).json(data);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
@@ -157,27 +209,55 @@ export const analyzeQuestionPaper = async (req, res) => {
     const { workspaceId, sourceId } = req.body;
     if (!workspaceId) return res.status(400).json({ error: 'Workspace ID is required' });
 
-    let docText = '';
-    if (sourceId) {
-      const src = await Source.findById(sourceId);
-      if (src) docText = src.rawText;
-    } else {
-      docText = await getWorkspaceContext(workspaceId, 8000);
+    // Fetch all ready sources for this workspace
+    const sources = await Source.find({ workspaceId, status: 'ready' });
+    if (!sources || sources.length === 0) {
+      return res.status(400).json({ error: 'No source material is available for this workspace.' });
     }
 
+    let docText = '';
+    let selectedFilename = '';
+
+    if (sourceId) {
+      const src = await Source.findById(sourceId);
+      if (src) {
+        docText = src.rawText;
+        selectedFilename = src.filename;
+      }
+    } else {
+      // Find sources matching past paper keywords in filename
+      const pastPaperSources = sources.filter(s => 
+        /paper|exam|test|past|quiz|question|trend/i.test(s.filename)
+      );
+
+      if (pastPaperSources.length > 0) {
+        docText = pastPaperSources.map(s => `[Past Paper: ${s.filename}]\n${s.rawText.substring(0, 4000)}`).join('\n\n');
+        selectedFilename = pastPaperSources.map(s => s.filename).join(', ');
+      }
+    }
+
+    // If no past paper files are found, show a clear unverified warning state
     if (!docText) {
-      return res.status(400).json({ error: 'No question paper text found. Please upload a past paper first.' });
+      return res.status(200).json({
+        markdown: `### Past Paper Analysis
+> [!WARNING]
+> No verified past-paper dataset is available for this workspace. Upload past-paper material to generate verified trends.`
+      });
     }
 
     const systemPrompt = `You are a medical school exam coordinator analyzing past exam papers.
 Review the exam text provided and generate a pattern analysis report.
-Format as Markdown containing:
-1. **Frequently Asked Topics**: List the recurring topics, questions, or themes, with estimated frequencies.
+Do not invent or fabricate exam statistics, percentages, years, question counts, or historical trends.
+Distinguish clearly between facts present in the text (SOURCE FACTS) and your general exam prep advice (MODEL INFERENCE).
+If the text does not contain enough concrete question patterns to extract frequencies, explain this limitation in the report rather than inventing metrics.
+
+Format your response as Markdown containing:
+1. **Frequently Asked Topics**: List the recurring topics, questions, or themes found in the provided past paper content, with frequencies.
 2. **High-Yield Core Chapters**: Group the questions into subject chapters (Anatomy, Pharmacology, etc.) and highlight major trends.
-3. **Priority Study Plan ('What should I study first?')**: Order the topics chronologically by exam importance, recommending where a student should focus their efforts.
+3. **Priority Study Plan**: Recommend where a student should focus their efforts based on the actual provided paper content.
 4. **Sample Practice Questions**: Recreate 3 typical exam-style questions found in the patterns.`;
 
-    const userPrompt = `Exam text content:\n${docText.substring(0, 12000)}\n\nPerform exam pattern analysis.`;
+    const userPrompt = `Exam text content from [${selectedFilename}]:\n${docText.substring(0, 12000)}\n\nPerform exam pattern analysis.`;
     const result = await queryLLM(systemPrompt, userPrompt, false);
     return res.status(200).json({ markdown: result });
   } catch (error) {
@@ -292,17 +372,21 @@ export const updateProgress = async (req, res) => {
 // 8. Reminders CRUD
 export const createReminder = async (req, res) => {
   try {
-    const { subject, topic, datetime, message } = req.body;
+    const { workspaceId, subject, topic, datetime, duration, priority, notes } = req.body;
     if (!subject || !topic || !datetime) {
       return res.status(400).json({ error: 'Subject, topic, and datetime are required' });
     }
 
     const reminder = new Reminder({
       userId: req.body.userId || 'default_user',
+      workspaceId: workspaceId || null,
       subject,
       topic,
       datetime: new Date(datetime),
-      message
+      duration: duration || 60,
+      priority: priority || 'medium',
+      notes: notes || '',
+      completed: false
     });
 
     await reminder.save();
@@ -317,6 +401,30 @@ export const getReminders = async (req, res) => {
     const userId = req.query.userId || 'default_user';
     const reminders = await Reminder.find({ userId }).sort({ datetime: 1 });
     return res.status(200).json(reminders);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+export const updateReminder = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { completed, active, datetime, topic, subject, notes, duration, priority } = req.body;
+    
+    const reminder = await Reminder.findById(id);
+    if (!reminder) return res.status(404).json({ error: 'Reminder not found' });
+
+    if (completed !== undefined) reminder.completed = completed;
+    if (active !== undefined) reminder.active = active;
+    if (datetime !== undefined) reminder.datetime = new Date(datetime);
+    if (topic !== undefined) reminder.topic = topic;
+    if (subject !== undefined) reminder.subject = subject;
+    if (notes !== undefined) reminder.notes = notes;
+    if (duration !== undefined) reminder.duration = duration;
+    if (priority !== undefined) reminder.priority = priority;
+
+    await reminder.save();
+    return res.status(200).json(reminder);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
@@ -356,6 +464,140 @@ export const globalSearch = async (req, res) => {
       flashcards,
       quizzes
     });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+export const generateFocusTopic = async (req, res) => {
+  try {
+    const { workspaceId, topic } = req.body;
+
+    if (!workspaceId) {
+      return res.status(400).json({ error: 'Workspace ID is required' });
+    }
+
+    if (!topic || !topic.trim()) {
+      return res.status(400).json({ error: 'Focus topic is required' });
+    }
+
+    const trimmedTopic = topic.trim().substring(0, 100);
+
+    // 1. Retrieve workspace sources using direct overrides (fail fast)
+    const sources = await Source.find({ workspaceId, status: 'ready' });
+    if (!sources || sources.length === 0) {
+      return res.status(400).json({ 
+        error: 'No study material found in this workspace. Please upload some notes or documents first.' 
+      });
+    }
+
+    const context = sources.map(s => `[Source: ${s.filename}]\n${s.rawText.substring(0, 5000)}`).join('\n\n');
+
+    const systemPrompt = `You are an expert medical educator.
+Analyze the provided study material and generate a comprehensive study sheet for the following focus topic: "${trimmedTopic}".
+Only include information directly supported by the student's study material. Do not extrapolate beyond the source text context.
+
+Format your response in Markdown containing exactly these headers:
+# Focus Topic: ${trimmedTopic}
+
+## Overview
+A concise medical overview of the focus topic.
+
+## Key Concepts
+High-yield conceptual breakdown of this topic.
+
+## Important Facts
+Core physiological/pathological facts from the text.
+
+## High-Yield Points
+Essential exam relevance and testable details.
+
+## Relevant Explanations
+Explanations of mechanics and pathways as documented.
+
+## Common Mistakes & Confusions
+Clarify potential misunderstandings or diagnostic mixups.
+
+## Important Terms
+Definitions of key medical jargon and vocab from the text.
+
+## Suggested Revision Points
+Topics or files to check next for reinforcement.`;
+
+    const userPrompt = `Student study material:\n${context.substring(0, 12000)}\n\nGenerate focus topic study sheet for: ${trimmedTopic}`;
+
+    // 2. Query LLM
+    const result = await queryLLM(systemPrompt, userPrompt, false);
+
+    return res.status(200).json({ markdown: result });
+
+  } catch (error) {
+    console.error('Focus topic generation error:', error);
+    let userMessage = 'Unable to load your study material. Please check your connection or try again.';
+    if (error.name === 'MongooseError' || error.message.includes('buffering timed out') || error.message.includes('Mongo')) {
+      userMessage = 'Failed to load study material due to a database connection issue. Please try again later.';
+    } else if (error.message) {
+      userMessage = error.message;
+    }
+    return res.status(500).json({ error: userMessage });
+  }
+};
+
+export const getOrCreateStudySession = async (req, res) => {
+  try {
+    const { workspaceId, topic, subject } = req.body;
+    if (!workspaceId || !topic) {
+      return res.status(400).json({ error: 'workspaceId and topic are required' });
+    }
+
+    let session = await StudySession.findOne({ workspaceId, topic });
+    if (!session) {
+      session = new StudySession({
+        workspaceId,
+        topic,
+        subject: subject || '',
+        messages: [],
+        completedSections: [],
+        revisionNotes: '',
+        savedExplanations: [],
+        visualLearning: []
+      });
+      await session.save();
+    }
+    return res.status(200).json(session);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+export const updateStudySession = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { 
+      totalStudyTime, 
+      progress, 
+      completedSections, 
+      revisionNotes, 
+      savedExplanations, 
+      visualLearning, 
+      messages 
+    } = req.body;
+
+    const session = await StudySession.findById(id);
+    if (!session) return res.status(404).json({ error: 'Study session not found' });
+
+    if (totalStudyTime !== undefined) session.totalStudyTime = totalStudyTime;
+    if (progress !== undefined) session.progress = progress;
+    if (completedSections !== undefined) session.completedSections = completedSections;
+    if (revisionNotes !== undefined) session.revisionNotes = revisionNotes;
+    if (savedExplanations !== undefined) session.savedExplanations = savedExplanations;
+    if (visualLearning !== undefined) session.visualLearning = visualLearning;
+    if (messages !== undefined) session.messages = messages;
+
+    session.lastStudiedAt = new Date();
+    await session.save();
+    
+    return res.status(200).json(session);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }

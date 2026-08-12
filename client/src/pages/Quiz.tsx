@@ -7,13 +7,17 @@ import QuizPanel from '../components/QuizPanel';
 import Modal from '../components/Modal';
 import LoadingSpinner from '../components/LoadingSpinner';
 
-const Quiz: React.FC = () => {
+interface QuizProps {
+  initialWorkspaceId?: string;
+}
+
+const Quiz: React.FC<QuizProps> = ({ initialWorkspaceId }) => {
   const [quizzes, setQuizzes] = useState<QuizType[]>([]);
   const [workspaces, setWorkspaces] = useState<Workspace[]>([]);
   const [loading, setLoading] = useState(true);
 
   // New Quiz generator inputs
-  const [selectedWorkspaceId, setSelectedWorkspaceId] = useState('');
+  const [selectedWorkspaceId, setSelectedWorkspaceId] = useState(initialWorkspaceId || '');
   const [topic, setTopic] = useState('');
   const [difficulty, setDifficulty] = useState<'easy' | 'medium' | 'hard'>('medium');
   const [numQuestions, setNumQuestions] = useState(5);
@@ -31,7 +35,7 @@ const Quiz: React.FC = () => {
         setSelectedWorkspaceId(wsList[0]._id);
       }
 
-      const prevQuizzes = await quizAPI.list();
+      const prevQuizzes = await quizAPI.list(selectedWorkspaceId || undefined);
       setQuizzes(prevQuizzes);
     } catch (err) {
       console.error(err);
@@ -42,7 +46,7 @@ const Quiz: React.FC = () => {
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, [selectedWorkspaceId]);
 
   const handleGenerateQuiz = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,9 +63,10 @@ const Quiz: React.FC = () => {
       
       setActiveQuiz(generated);
       setTopic(''); // reset
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      alert('Failed to generate practice test. Please ensure notes are uploaded in workspace.');
+      const errMsg = err.response?.data?.error || err.message || 'Failed to generate practice test. Please ensure notes are uploaded in workspace.';
+      alert(errMsg);
     } finally {
       setGenerating(false);
     }
@@ -163,7 +168,10 @@ const Quiz: React.FC = () => {
                     >
                       <option value={5}>5 MCQs</option>
                       <option value={10}>10 MCQs</option>
+                      <option value={15}>15 MCQs</option>
                       <option value={20}>20 MCQs</option>
+                      <option value={25}>25 MCQs</option>
+                      <option value={30}>30 MCQs</option>
                     </select>
                   </div>
                 </div>
@@ -173,7 +181,7 @@ const Quiz: React.FC = () => {
                   disabled={generating}
                   className="w-full mt-3 bg-medical-500 hover:bg-medical-600 text-white font-bold text-xs py-2.5 rounded-xl shadow-md transition disabled:opacity-50"
                 >
-                  {generating ? 'Compiling MCQs...' : 'Generate Practice Test'}
+                  {generating ? 'Generating MCQs...' : 'Generate Practice Test'}
                 </button>
               </form>
             )}

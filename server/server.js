@@ -11,6 +11,7 @@ import quizRoutes from './routes/quizRoutes.js';
 import flashcardRoutes from './routes/flashcardRoutes.js';
 import studyRoutes from './routes/studyRoutes.js';
 import workspaceRoutes from './routes/workspaceRoutes.js';
+import visualRoutes from './routes/visualRoutes.js';
 
 // Environment variables loading
 dotenv.config();
@@ -42,6 +43,7 @@ app.use('/api/chat', chatRoutes);
 app.use('/api/quiz', quizRoutes);
 app.use('/api/flashcards', flashcardRoutes);
 app.use('/api/study', studyRoutes);
+app.use('/api/visual', visualRoutes);
 
 // Catch 404
 app.use((req, res, next) => {

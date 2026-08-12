@@ -90,8 +90,11 @@ export const chatAPI = {
 // QUIZ API
 // ==========================================
 export const quizAPI = {
-  list: async (workspaceId?: string): Promise<Quiz[]> => {
-    const url = workspaceId ? `/quiz?workspaceId=${workspaceId}` : '/quiz';
+  list: async (workspaceId?: string, topic?: string): Promise<Quiz[]> => {
+    const params = [];
+    if (workspaceId) params.push(`workspaceId=${workspaceId}`);
+    if (topic) params.push(`topic=${encodeURIComponent(topic)}`);
+    const url = params.length > 0 ? `/quiz?${params.join('&')}` : '/quiz';
     const res = await client.get(url);
     return res.data;
   },
@@ -109,21 +112,31 @@ export const quizAPI = {
 // FLASHCARD API
 // ==========================================
 export const flashcardAPI = {
-  list: async (workspaceId?: string, deckName?: string): Promise<Flashcard[]> => {
+  list: async (workspaceId?: string, deckName?: string, topic?: string): Promise<Flashcard[]> => {
     let url = '/flashcards';
     const params = [];
     if (workspaceId) params.push(`workspaceId=${workspaceId}`);
     if (deckName) params.push(`deckName=${deckName}`);
+    if (topic) params.push(`topic=${encodeURIComponent(topic)}`);
     if (params.length > 0) url += `?${params.join('&')}`;
     
     const res = await client.get(url);
     return res.data;
   },
-  generate: async (workspaceId: string, deckName?: string, numCards?: number): Promise<Flashcard[]> => {
-    const res = await client.post('/flashcards/generate', { workspaceId, deckName, numCards });
+  generate: async (workspaceId: string, deckName?: string, numCards?: number, topic?: string): Promise<Flashcard[]> => {
+    const res = await client.post('/flashcards/generate', { workspaceId, deckName, numCards, topic });
     return res.data;
   },
-  save: async (data: { workspaceId: string; deckName?: string; question: string; answer: string; difficulty?: string }): Promise<Flashcard> => {
+  save: async (data: { 
+    workspaceId: string; 
+    topic?: string; 
+    deckName?: string; 
+    question?: string; 
+    answer?: string; 
+    difficulty?: string;
+    flashcards?: any[];
+    questions?: any[];
+  }): Promise<any> => {
     const res = await client.post('/flashcards/save', data);
     return res.data;
   },
@@ -141,12 +154,16 @@ export const flashcardAPI = {
 // STUDY TOOLS & GENERATORS
 // ==========================================
 export const studyAPI = {
+  generateFocusTopic: async (workspaceId: string, topic: string): Promise<{ markdown: string }> => {
+    const res = await client.post('/study/focus/generate', { workspaceId, topic });
+    return res.data;
+  },
   generateRevision: async (workspaceId: string, topic: string): Promise<{ markdown: string }> => {
     const res = await client.post('/study/revision/generate', { workspaceId, topic });
     return res.data;
   },
-  generateVisual: async (workspaceId: string, topic: string): Promise<{ markdown: string }> => {
-    const res = await client.post('/study/visual/generate', { workspaceId, topic });
+  generateVisual: async (workspaceId: string, topic: string, type: 'flowchart' | 'mindmap'): Promise<any> => {
+    const res = await client.post('/study/visual/generate', { workspaceId, topic, type });
     return res.data;
   },
   generateStudyGuide: async (workspaceId: string, topic: string): Promise<{ markdown: string }> => {
@@ -190,12 +207,36 @@ export const studyAPI = {
     const res = await client.get(`/study/reminders?userId=${userId}`);
     return res.data;
   },
-  createReminder: async (data: { subject: string; topic: string; datetime: string; message?: string; userId?: string }): Promise<Reminder> => {
+  createReminder: async (data: { 
+    workspaceId?: string; 
+    subject: string; 
+    topic: string; 
+    datetime: string; 
+    duration?: number; 
+    priority?: string; 
+    notes?: string; 
+    message?: string;
+    userId?: string;
+  }): Promise<Reminder> => {
     const res = await client.post('/study/reminders', data);
+    return res.data;
+  },
+  updateReminder: async (id: string, data: Partial<Reminder>): Promise<Reminder> => {
+    const res = await client.patch(`/study/reminders/${id}`, data);
     return res.data;
   },
   deleteReminder: async (id: string): Promise<{ message: string }> => {
     const res = await client.delete(`/study/reminders/${id}`);
+    return res.data;
+  },
+
+  // Study Sessions for Topic Study Space
+  getOrCreateSession: async (workspaceId: string, topic: string, subject?: string): Promise<StudySession> => {
+    const res = await client.post('/study/session/get-or-create', { workspaceId, topic, subject });
+    return res.data;
+  },
+  updateSession: async (id: string, data: Partial<StudySession>): Promise<StudySession> => {
+    const res = await client.patch(`/study/session/${id}`, data);
     return res.data;
   },
 
@@ -204,4 +245,15 @@ export const studyAPI = {
     const res = await client.get(`/study/search?q=${encodeURIComponent(q)}`);
     return res.data;
   },
+};
+
+export const visualAPI = {
+  generateDiagram: async (workspaceId: string, topic: string, diagramType?: string): Promise<any> => {
+    const res = await client.post('/visual/diagram', { workspaceId, topic, diagramType });
+    return res.data;
+  },
+  saveDiagram: async (data: { workspaceId: string; sessionId?: string; topic?: string; subject?: string; diagramData: any }): Promise<any> => {
+    const res = await client.post('/visual/save', data);
+    return res.data;
+  }
 };

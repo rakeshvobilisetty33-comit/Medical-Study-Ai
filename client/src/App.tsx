@@ -10,6 +10,7 @@ import StudyPlanner from './pages/StudyPlanner';
 import Progress from './pages/Progress';
 import Settings from './pages/Settings';
 import CreateWorkspaceModal from './components/CreateWorkspaceModal';
+import TopicStudySpace from './pages/TopicStudySpace';
 import { storage } from './utils/storage';
 import { workspaceAPI } from './services/api';
 
@@ -17,6 +18,11 @@ const App: React.FC = () => {
   const [userName, setUserName] = useState<string>(storage.getUserName() || '');
   const [activePage, setActivePage] = useState<string>('dashboard');
   const [selectedWorkspaceId, setSelectedWorkspaceId] = useState<string>('');
+  
+  // Study Space state
+  const [studySpaceWorkspaceId, setStudySpaceWorkspaceId] = useState<string>('');
+  const [studySpaceTopic, setStudySpaceTopic] = useState<string>('');
+  const [studySpaceSubject, setStudySpaceSubject] = useState<string>('');
   
   // Refresh sidebar triggers
   const [workspacesRefresh, setWorkspacesRefresh] = useState(0);
@@ -83,6 +89,13 @@ const App: React.FC = () => {
     }
   };
 
+  const handleOpenStudySpace = (workspaceId: string, topic: string, subject: string) => {
+    setStudySpaceWorkspaceId(workspaceId);
+    setStudySpaceTopic(topic);
+    setStudySpaceSubject(subject);
+    setActivePage('study-space');
+  };
+
   // Sync dark theme on launch
   useEffect(() => {
     const root = window.document.documentElement;
@@ -139,7 +152,7 @@ const App: React.FC = () => {
         />
 
         {/* Content Viewer Panel */}
-        <main className="flex-1 overflow-y-auto min-h-0">
+        <main className={`flex-1 min-h-0 ${activePage === 'workspace' ? 'overflow-hidden' : 'overflow-y-auto'}`}>
           {activePage === 'dashboard' && (
             <Home 
               userName={userName}
@@ -159,11 +172,30 @@ const App: React.FC = () => {
             />
           )}
 
-          {activePage === 'flashcards' && <Flashcards />}
+          {activePage === 'flashcards' && (
+            <Flashcards
+              initialWorkspaceId={selectedWorkspaceId}
+            />
+          )}
           
-          {activePage === 'quiz' && <Quiz />}
+          {activePage === 'quiz' && (
+            <Quiz
+              initialWorkspaceId={selectedWorkspaceId}
+            />
+          )}
           
-          {activePage === 'planner' && <StudyPlanner />}
+          {activePage === 'planner' && (
+            <StudyPlanner onOpenStudySpace={handleOpenStudySpace} />
+          )}
+          
+          {activePage === 'study-space' && studySpaceWorkspaceId && studySpaceTopic && (
+            <TopicStudySpace
+              workspaceId={studySpaceWorkspaceId}
+              topic={studySpaceTopic}
+              subject={studySpaceSubject}
+              onBackToPlanner={() => handleNavigatePage('planner')}
+            />
+          )}
           
           {activePage === 'progress' && <Progress />}
           

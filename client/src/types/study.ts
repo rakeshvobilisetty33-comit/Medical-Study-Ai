@@ -35,10 +35,15 @@ export interface StudyProgress {
 export interface Reminder {
   _id: string;
   userId: string;
+  workspaceId?: string;
   subject: string;
   topic: string;
   datetime: string;
+  duration?: number;
+  priority?: 'low' | 'medium' | 'high';
+  notes?: string;
   message?: string;
+  completed?: boolean;
   active: boolean;
   createdAt: string;
 }

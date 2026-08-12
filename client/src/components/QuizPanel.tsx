@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle2, Award, Clock, RefreshCw, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle2, Award, Clock, RefreshCw, BookOpen, Plus } from 'lucide-react';
 import { Quiz } from '../types/quiz';
 import QuestionCard from './QuestionCard';
 import { quizAPI } from '../services/api';
@@ -13,10 +13,14 @@ interface QuizPanelProps {
 const QuizPanel: React.FC<QuizPanelProps> = ({ quiz, onQuizCompleted, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({});
+  const [checkedAnswers, setCheckedAnswers] = useState<Record<string, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [gradedResults, setGradedResults] = useState<any>(null);
   
+  // Review Mode state
+  const [expandedReviewIndex, setExpandedReviewIndex] = useState<number | null>(null);
+
   // Timer State
   const [secondsLeft, setSecondsLeft] = useState(quiz.questions.length * 60); // 1 min per question
   const [timerActive, setTimerActive] = useState(true);
@@ -40,11 +44,21 @@ const QuizPanel: React.FC<QuizPanelProps> = ({ quiz, onQuizCompleted, onClose })
 
   const handleSelectOption = (optionText: string) => {
     const questionId = quiz.questions[currentIndex]?._id;
-    if (!questionId || submitted) return;
+    if (!questionId || submitted || checkedAnswers[questionId]) return;
 
     setSelectedAnswers(prev => ({
       ...prev,
       [questionId]: optionText
+    }));
+  };
+
+  const handleCheckAnswer = () => {
+    const questionId = quiz.questions[currentIndex]?._id;
+    if (!questionId) return;
+
+    setCheckedAnswers(prev => ({
+      ...prev,
+      [questionId]: true
     }));
   };
 
@@ -90,7 +104,7 @@ const QuizPanel: React.FC<QuizPanelProps> = ({ quiz, onQuizCompleted, onClose })
   // 1. DISPLAY COMPLETED GRADING CARD
   if (submitted && gradedResults) {
     return (
-      <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-gray-100 dark:border-slate-800 shadow-xl max-w-xl mx-auto space-y-6">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-gray-150 dark:border-slate-800 shadow-xl max-w-xl mx-auto space-y-6">
         <div className="text-center">
           <div className="inline-flex p-4 bg-medical-50 dark:bg-medical-950/20 text-medical-500 rounded-full mb-3 active-pulse">
             <Award className="w-10 h-10" />
@@ -146,6 +160,52 @@ const QuizPanel: React.FC<QuizPanelProps> = ({ quiz, onQuizCompleted, onClose })
           )}
         </div>
 
+        {/* Question Review Accordion */}
+        <div className="space-y-2 border-t border-gray-150 dark:border-slate-800 pt-4">
+          <h3 className="text-xs font-extrabold uppercase text-gray-400 tracking-wider">Question-by-Question Review</h3>
+          <div className="space-y-2 max-h-[220px] overflow-y-auto pr-1">
+            {quiz.questions.map((q, idx) => {
+              const userAnswer = selectedAnswers[q._id];
+              const isCorrect = userAnswer === q.correctAnswer;
+              const isExpanded = expandedReviewIndex === idx;
+
+              return (
+                <div 
+                  key={q._id} 
+                  className="border border-gray-150 dark:border-slate-800 rounded-2xl overflow-hidden bg-gray-50/50 dark:bg-slate-800/10"
+                >
+                  <button
+                    onClick={() => setExpandedReviewIndex(isExpanded ? null : idx)}
+                    className="w-full flex items-center justify-between p-3 text-left text-xs font-bold transition hover:bg-gray-100/50 dark:hover:bg-slate-850/40"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className={`px-2 py-0.5 rounded-md text-[9px] uppercase font-black ${
+                        isCorrect 
+                          ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-400' 
+                          : 'bg-red-100 text-red-800 dark:bg-red-950/30 dark:text-red-400'
+                      }`}>
+                        Question {idx + 1}: {isCorrect ? 'Correct' : 'Incorrect'}
+                      </span>
+                    </div>
+                    <span className="text-[10px] text-medical-500 font-bold shrink-0">{isExpanded ? 'Collapse' : 'Expand'}</span>
+                  </button>
+
+                  {isExpanded && (
+                    <div className="p-4 border-t border-gray-150 dark:border-slate-850 bg-white dark:bg-slate-900 space-y-4">
+                      <QuestionCard
+                        question={q}
+                        selectedOption={userAnswer || null}
+                        onSelectOption={() => {}}
+                        showFeedback={true}
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Action Controls */}
         <div className="flex gap-3 pt-2">
           <button
@@ -153,26 +213,23 @@ const QuizPanel: React.FC<QuizPanelProps> = ({ quiz, onQuizCompleted, onClose })
               setSubmitted(false);
               setGradedResults(null);
               setSelectedAnswers({});
+              setCheckedAnswers({});
               setCurrentIndex(0);
               setSecondsLeft(quiz.questions.length * 60);
               setTimerActive(true);
             }}
-            className="flex-1 py-2.5 bg-gray-100 dark:bg-slate-800 hover:bg-gray-250 dark:hover:bg-slate-700 text-xs font-bold text-gray-700 dark:text-slate-300 rounded-xl transition flex items-center justify-center gap-1.5"
+            className="flex-1 py-2.5 bg-gray-150 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-xs font-bold text-gray-700 dark:text-slate-300 rounded-xl transition flex items-center justify-center gap-1.5"
           >
             <RefreshCw className="w-3.5 h-3.5" />
-            <span>Retake Quiz</span>
+            <span>Retry Quiz</span>
           </button>
           
           <button
-            onClick={() => {
-              // Allows reviewing question cards with green/red feedback badges active
-              setSubmitted(false);
-              setCurrentIndex(0);
-            }}
+            onClick={onClose}
             className="flex-1 py-2.5 bg-medical-500 hover:bg-medical-600 text-white text-xs font-bold rounded-xl shadow-md transition flex items-center justify-center gap-1.5"
           >
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>Review Answers</span>
+            <Plus className="w-3.5 h-3.5" />
+            <span>New Quiz</span>
           </button>
         </div>
       </div>
@@ -217,7 +274,7 @@ const QuizPanel: React.FC<QuizPanelProps> = ({ quiz, onQuizCompleted, onClose })
             question={currentQuestion}
             selectedOption={selectedAnswers[currentQuestion._id] || null}
             onSelectOption={handleSelectOption}
-            showFeedback={!!gradedResults}
+            showFeedback={!!gradedResults || checkedAnswers[currentQuestion._id]}
           />
         ) : (
           <div className="text-center py-12 text-sm text-gray-400">Question indexing error.</div>
@@ -235,31 +292,46 @@ const QuizPanel: React.FC<QuizPanelProps> = ({ quiz, onQuizCompleted, onClose })
           <span>Previous</span>
         </button>
 
+        {/* CHECK ANSWER BUTTON */}
+        {!gradedResults && !checkedAnswers[currentQuestion._id] && (
+          <button
+            onClick={handleCheckAnswer}
+            disabled={!isQuestionAnswered}
+            className="bg-medical-500 hover:bg-medical-600 active:scale-95 text-white font-bold text-xs py-2.5 px-5 rounded-xl shadow-md transition disabled:opacity-45"
+          >
+            Check Answer
+          </button>
+        )}
+
         {currentIndex === quiz.questions.length - 1 ? (
           !gradedResults ? (
-            <button
-              onClick={handleSubmitQuiz}
-              disabled={submitting || Object.keys(selectedAnswers).length < quiz.questions.length}
-              className="bg-medical-500 hover:bg-medical-600 active:scale-95 text-white font-bold text-xs py-2 px-5 rounded-xl shadow-md transition disabled:opacity-40 disabled:scale-100"
-            >
-              {submitting ? 'Grading...' : 'Submit Answers'}
-            </button>
+            checkedAnswers[currentQuestion._id] && (
+              <button
+                onClick={handleSubmitQuiz}
+                disabled={submitting}
+                className="bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold text-xs py-2.5 px-5 rounded-xl shadow-md transition disabled:opacity-40"
+              >
+                {submitting ? 'Grading...' : 'Submit Answers'}
+              </button>
+            )
           ) : (
             <button
               onClick={onClose}
-              className="bg-slate-700 hover:bg-slate-800 text-white font-bold text-xs py-2 px-5 rounded-xl transition"
+              className="bg-slate-750 hover:bg-slate-800 text-white font-bold text-xs py-2.5 px-5 rounded-xl transition"
             >
               Close Review
             </button>
           )
         ) : (
-          <button
-            onClick={handleNext}
-            className="flex items-center gap-1 px-3 py-2 text-xs font-bold text-medical-600 hover:text-medical-700 dark:text-medical-400"
-          >
-            <span>Next</span>
-            <ChevronRight className="w-4 h-4" />
-          </button>
+          checkedAnswers[currentQuestion._id] && (
+            <button
+              onClick={handleNext}
+              className="flex items-center gap-1 px-3 py-2 text-xs font-bold text-medical-600 hover:text-medical-700 dark:text-medical-400"
+            >
+              <span>Next</span>
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          )
         )}
       </div>
 

@@ -4,7 +4,7 @@ import { queryLLM } from '../services/aiService.js';
 
 export const generateFlashcards = async (req, res) => {
   try {
-    const { workspaceId, deckName = 'Quick Revision', numCards = 5 } = req.body;
+    const { workspaceId, deckName = 'Quick Revision', numCards = 5, topic } = req.body;
 
     if (!workspaceId) {
       return res.status(400).json({ error: 'Workspace ID is required' });
@@ -20,6 +20,7 @@ export const generateFlashcards = async (req, res) => {
 
     const systemPrompt = `You are a medical school academic tutor.
 Generate exactly ${numCards} educational flashcards based on the study text provided.
+${topic ? `Generate cards specifically for the topic: "${topic}".` : ''}
 For each flashcard, create a clear, concise question or prompt for the Front, and a detailed, high-yield explanation for the Back.
 
 Your response MUST be a valid JSON array of flashcard objects. Do not wrap the JSON in markdown code blocks.
@@ -35,18 +36,20 @@ Each flashcard object MUST have the following structure:
     // 2. Query LLM
     const cardDataList = await queryLLM(systemPrompt, userPrompt, true);
 
-    // 3. Map and save to database
-    const cardsToInsert = cardDataList.map(card => ({
+    // 3. Map generated cards with temporary IDs
+    const generatedCards = cardDataList.map((card, idx) => ({
+      _id: `temp_${Date.now()}_${idx}`,
       workspaceId,
+      topic: topic || '',
       deckName,
       question: card.question,
       answer: card.answer,
       difficulty: card.difficulty || 'medium',
-      status: 'new'
+      status: 'new',
+      reviewCount: 0
     }));
 
-    const savedCards = await Flashcard.insertMany(cardsToInsert);
-    return res.status(201).json(savedCards);
+    return res.status(200).json(generatedCards);
 
   } catch (error) {
     console.error('Flashcard generation error:', error);
@@ -56,14 +59,45 @@ Each flashcard object MUST have the following structure:
 
 export const saveFlashcard = async (req, res) => {
   try {
-    const { workspaceId, deckName, question, answer, difficulty } = req.body;
+    const { workspaceId, topic, deckName, question, answer, difficulty, flashcards, questions } = req.body;
 
-    if (!workspaceId || !question || !answer) {
-      return res.status(400).json({ error: 'Workspace ID, question, and answer are required' });
+    if (!workspaceId) {
+      return res.status(400).json({ error: 'Workspace ID is required' });
+    }
+
+    const cardsList = flashcards || questions;
+    if (Array.isArray(cardsList)) {
+      if (cardsList.length === 0) {
+        return res.status(400).json({ error: 'Flashcards array cannot be empty' });
+      }
+
+      const cardsToInsert = cardsList.map(card => {
+        if (!card.question || !card.answer) {
+          throw new Error('Each flashcard must have a question and an answer');
+        }
+        return {
+          workspaceId,
+          topic: topic || card.topic || '',
+          deckName: deckName || card.deckName || 'Custom Deck',
+          question: card.question,
+          answer: card.answer,
+          difficulty: card.difficulty || 'medium',
+          status: card.status || 'new',
+          reviewCount: card.reviewCount || 0
+        };
+      });
+
+      const savedCards = await Flashcard.insertMany(cardsToInsert);
+      return res.status(201).json(savedCards);
+    }
+
+    if (!question || !answer) {
+      return res.status(400).json({ error: 'Question and answer are required' });
     }
 
     const newCard = new Flashcard({
       workspaceId,
+      topic: topic || '',
       deckName: deckName || 'Custom Deck',
       question,
       answer,
@@ -73,17 +107,19 @@ export const saveFlashcard = async (req, res) => {
     await newCard.save();
     return res.status(201).json(newCard);
   } catch (error) {
+    console.error('Save flashcards error:', error);
     return res.status(500).json({ error: error.message });
   }
 };
 
 export const getFlashcards = async (req, res) => {
   try {
-    const { workspaceId, deckName } = req.query;
+    const { workspaceId, deckName, topic } = req.query;
     const query = {};
     
     if (workspaceId) query.workspaceId = workspaceId;
     if (deckName) query.deckName = deckName;
+    if (topic) query.topic = topic;
 
     const cards = await Flashcard.find(query).sort({ createdAt: -1 });
     return res.status(200).json(cards);
