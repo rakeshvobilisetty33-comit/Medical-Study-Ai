@@ -15,7 +15,8 @@ import { storage } from './utils/storage';
 import { workspaceAPI } from './services/api';
 
 const App: React.FC = () => {
-  const [userName, setUserName] = useState<string>(storage.getUserName() || '');
+  const [userName, setUserName] = useState<string>(storage.getUserName() || 'Medical Student');
+
   const [activePage, setActivePage] = useState<string>('dashboard');
   const [selectedWorkspaceId, setSelectedWorkspaceId] = useState<string>('');
   

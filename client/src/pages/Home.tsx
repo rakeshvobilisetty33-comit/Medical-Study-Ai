@@ -47,7 +47,7 @@ const Home: React.FC<HomeProps> = ({
 }) => {
   // First-load Name prompting state
   const [nameInput, setNameInput] = useState('');
-  const [showWelcome, setShowWelcome] = useState(!userName);
+  const [showWelcome, setShowWelcome] = useState(!storage.getUserName());
   
   // Workspace list state
   const [workspaces, setWorkspaces] = useState<Workspace[]>([]);
@@ -72,10 +72,8 @@ const Home: React.FC<HomeProps> = ({
   };
 
   useEffect(() => {
-    if (userName) {
-      loadDashboardData();
-    }
-  }, [userName, workspacesRefresh]);
+    loadDashboardData();
+  }, [workspacesRefresh]);
 
   const handleSaveName = (e: React.FormEvent) => {
     e.preventDefault();
@@ -97,51 +95,50 @@ const Home: React.FC<HomeProps> = ({
     }
   };
 
-  // 1. FIRST LOAD USER PROFILE MODAL
-  if (showWelcome) {
-    return (
-      <div className="fixed inset-0 z-50 bg-slate-900/60 dark:bg-black/60 backdrop-blur-md flex items-center justify-center p-4">
-        <div className="w-full max-w-md bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-8 shadow-2xl space-y-6 text-center">
-          <div className="flex justify-center">
-            <div className="bg-medical-500 text-white p-4 rounded-3xl active-pulse">
-              <BookOpen className="w-10 h-10" />
-            </div>
-          </div>
-          <div className="space-y-2">
-            <h2 className="text-2xl font-black text-gray-800 dark:text-white font-display">Welcome to MedStudy AI</h2>
-            <p className="text-xs text-gray-500 dark:text-slate-400 max-w-xs mx-auto">
-              Your intelligent clinical study companion. Set up your student profile to start.
-            </p>
-          </div>
-
-          <form onSubmit={handleSaveName} className="space-y-4">
-            <div className="text-left">
-              <label className="block text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-wider mb-2">What is your name?</label>
-              <input
-                type="text"
-                value={nameInput}
-                onChange={(e) => setNameInput(e.target.value)}
-                placeholder="e.g. Bhavana"
-                className="w-full py-3 px-4 text-sm bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-medical-500 rounded-2xl"
-                required
-                autoFocus
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-medical-500 hover:bg-medical-600 active:scale-[0.98] text-white py-3 rounded-2xl font-semibold shadow-md shadow-medical-500/10 transition"
-            >
-              Continue to Study Space
-            </button>
-          </form>
-        </div>
-      </div>
-    );
-  }
-
   // 2. MAIN DASHBOARD PAGE
   return (
-    <div className="max-w-6xl mx-auto px-6 py-8 space-y-8 select-none">
+    <div className="max-w-6xl mx-auto px-6 py-8 space-y-8 select-none relative">
+      
+      {/* 1. FIRST LOAD USER PROFILE MODAL OVERLAY */}
+      {showWelcome && (
+        <div className="fixed inset-0 z-50 bg-slate-900/60 dark:bg-black/60 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="w-full max-w-md bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-8 shadow-2xl space-y-6 text-center">
+            <div className="flex justify-center">
+              <div className="bg-medical-500 text-white p-4 rounded-3xl active-pulse">
+                <BookOpen className="w-10 h-10" />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <h2 className="text-2xl font-black text-gray-800 dark:text-white font-display">Welcome to MedStudy AI</h2>
+              <p className="text-xs text-gray-500 dark:text-slate-400 max-w-xs mx-auto">
+                Your intelligent clinical study companion. Set up your student profile to start.
+              </p>
+            </div>
+
+            <form onSubmit={handleSaveName} className="space-y-4">
+              <div className="text-left">
+                <label className="block text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-wider mb-2">What is your name?</label>
+                <input
+                  type="text"
+                  value={nameInput}
+                  onChange={(e) => setNameInput(e.target.value)}
+                  placeholder="e.g. Bhavana"
+                  className="w-full py-3 px-4 text-sm bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-medical-500 rounded-2xl"
+                  required
+                  autoFocus
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-medical-500 hover:bg-medical-600 active:scale-[0.98] text-white py-3 rounded-2xl font-semibold shadow-md shadow-medical-500/10 transition"
+              >
+                Continue to Study Space
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
       
       {/* Disclaimer Alert */}
       <div className="p-3 bg-blue-50 dark:bg-blue-950/20 border border-blue-150 dark:border-blue-900 rounded-2xl flex gap-2.5 text-xs text-blue-700 dark:text-blue-400 leading-relaxed font-sans shrink-0 items-center">
