@@ -1,0 +1,1526 @@
+[
+  {
+    "workspaceId": "6a7992b91b4663999c1a38e8",
+    "title": "Practice Quiz (medium)",
+    "questions": [
+      {
+        "question": "Which of the following is considered a primary diagnostic marker for General Medical Topic?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of General Medical Topic, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7adca1955daab28964255a"
+      },
+      {
+        "question": "What is the recommended first-line therapeutic management for acute General Medical Topic?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of General Medical Topic.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7adca1955daab28964255b"
+      },
+      {
+        "question": "A patient presenting with advanced General Medical Topic is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from General Medical Topic leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "General Medical Topic",
+        "_id": "6a7adca1955daab28964255c"
+      }
+    ],
+    "score": 0,
+    "totalQuestions": 3,
+    "accuracy": 0,
+    "difficulty": "medium",
+    "weakTopics": [],
+    "strongTopics": [],
+    "_id": "6a7adca1955daab289642559",
+    "createdAt": "2026-08-11T08:26:09.357Z"
+  },
+  {
+    "workspaceId": "6a7addb269716fa7259d5e47",
+    "title": "General Concepts Quiz (medium)",
+    "questions": [
+      {
+        "question": "Which of the following is considered a primary diagnostic marker for General Medical Topic?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of General Medical Topic, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7ae3f59d92cac9e2680232"
+      },
+      {
+        "question": "What is the recommended first-line therapeutic management for acute General Medical Topic?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of General Medical Topic.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7ae3f59d92cac9e2680233"
+      },
+      {
+        "question": "A patient presenting with advanced General Medical Topic is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from General Medical Topic leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "General Medical Topic",
+        "_id": "6a7ae3f59d92cac9e2680234"
+      }
+    ],
+    "score": 3,
+    "totalQuestions": 3,
+    "accuracy": 100,
+    "difficulty": "medium",
+    "weakTopics": [],
+    "strongTopics": [
+      "General Medical Topic"
+    ],
+    "createdAt": "2026-08-11T08:57:25.095Z",
+    "_id": "6a7ae3f59d92cac9e2680231"
+  },
+  {
+    "workspaceId": "6a7992b91b4663999c1a38e8",
+    "title": "Cardiac CycleCardCardiac CycleCardiac CycleCardiac Cycleiac Cycle Quiz (medium)",
+    "questions": [
+      {
+        "question": "Which of the following is considered a primary diagnostic marker for General Medical Topic?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of General Medical Topic, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7ae82724450584910877fe"
+      },
+      {
+        "question": "What is the recommended first-line therapeutic management for acute General Medical Topic?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of General Medical Topic.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7ae82724450584910877ff"
+      },
+      {
+        "question": "A patient presenting with advanced General Medical Topic is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from General Medical Topic leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "General Medical Topic",
+        "_id": "6a7ae8272445058491087800"
+      }
+    ],
+    "score": 1,
+    "totalQuestions": 3,
+    "accuracy": 33,
+    "difficulty": "medium",
+    "weakTopics": [
+      "General Medical Topic"
+    ],
+    "strongTopics": [],
+    "createdAt": "2026-08-11T09:15:19.406Z",
+    "_id": "6a7ae82724450584910877fd"
+  },
+  {
+    "workspaceId": "6a7992b91b4663999c1a38e8",
+    "title": "Practice Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for General Medical Topic?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of General Medical Topic, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7af7446b0804bcf50f0fd6"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute General Medical Topic?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of General Medical Topic.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7af7446b0804bcf50f0fd7"
+      },
+      {
+        "question": "3. A patient presenting with advanced General Medical Topic is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from General Medical Topic leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "General Medical Topic",
+        "_id": "6a7af7446b0804bcf50f0fd8"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of General Medical Topic?",
+        "options": [
+          "Cellular energy production via mitochondrial dysfunction",
+          "Systemic lymphatic fluid absorption rate",
+          "Synaptic neurotransmission in the motor cortex",
+          "Hepatic glycogen synthesis rate"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with General Medical Topic, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7af7446b0804bcf50f0fd9"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected General Medical Topic?",
+        "options": [
+          "Localized tenderness and swelling over the affected area",
+          "Generalized petechiae and mucosal bleeding",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Hyper-resonance on thoracic percussion"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from General Medical Topic triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7af7446b0804bcf50f0fda"
+      }
+    ],
+    "score": 5,
+    "totalQuestions": 5,
+    "accuracy": 100,
+    "difficulty": "medium",
+    "weakTopics": [],
+    "strongTopics": [
+      "General Medical Topic"
+    ],
+    "createdAt": "2026-08-11T10:19:48.518Z",
+    "_id": "6a7af7446b0804bcf50f0fd5"
+  },
+  {
+    "workspaceId": "6a7992b91b4663999c1a38e8",
+    "title": "Practice Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for General Medical Topic?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of General Medical Topic, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7af882ed839d42270c7b00"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute General Medical Topic?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of General Medical Topic.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7af882ed839d42270c7b01"
+      },
+      {
+        "question": "3. A patient presenting with advanced General Medical Topic is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from General Medical Topic leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "General Medical Topic",
+        "_id": "6a7af882ed839d42270c7b02"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of General Medical Topic?",
+        "options": [
+          "Cellular energy production via mitochondrial dysfunction",
+          "Systemic lymphatic fluid absorption rate",
+          "Synaptic neurotransmission in the motor cortex",
+          "Hepatic glycogen synthesis rate"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with General Medical Topic, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7af882ed839d42270c7b03"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected General Medical Topic?",
+        "options": [
+          "Localized tenderness and swelling over the affected area",
+          "Generalized petechiae and mucosal bleeding",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Hyper-resonance on thoracic percussion"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from General Medical Topic triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7af882ed839d42270c7b04"
+      },
+      {
+        "question": "6. Which of the following is considered a primary diagnostic marker for General Medical Topic?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of General Medical Topic, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7af882ed839d42270c7b05"
+      },
+      {
+        "question": "7. What is the recommended first-line therapeutic management for acute General Medical Topic?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of General Medical Topic.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7af882ed839d42270c7b06"
+      },
+      {
+        "question": "8. A patient presenting with advanced General Medical Topic is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from General Medical Topic leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "General Medical Topic",
+        "_id": "6a7af882ed839d42270c7b07"
+      },
+      {
+        "question": "9. Which physiological pathway is most directly disrupted in advanced stages of General Medical Topic?",
+        "options": [
+          "Cellular energy production via mitochondrial dysfunction",
+          "Systemic lymphatic fluid absorption rate",
+          "Synaptic neurotransmission in the motor cortex",
+          "Hepatic glycogen synthesis rate"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with General Medical Topic, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7af882ed839d42270c7b08"
+      },
+      {
+        "question": "10. What is the classical clinical sign observed during physical examination of a patient with suspected General Medical Topic?",
+        "options": [
+          "Localized tenderness and swelling over the affected area",
+          "Generalized petechiae and mucosal bleeding",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Hyper-resonance on thoracic percussion"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from General Medical Topic triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7af882ed839d42270c7b09"
+      }
+    ],
+    "score": 0,
+    "totalQuestions": 10,
+    "accuracy": 0,
+    "difficulty": "medium",
+    "weakTopics": [],
+    "strongTopics": [],
+    "_id": "6a7af882ed839d42270c7aff",
+    "createdAt": "2026-08-11T10:25:06.926Z"
+  },
+  {
+    "workspaceId": "6a7992b91b4663999c1a38e8",
+    "title": "Heart Valves Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for General Medical Topic?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of General Medical Topic, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7b2668e50d514dd86f9920"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute General Medical Topic?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of General Medical Topic.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7b2668e50d514dd86f9921"
+      },
+      {
+        "question": "3. A patient presenting with advanced General Medical Topic is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from General Medical Topic leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "General Medical Topic",
+        "_id": "6a7b2668e50d514dd86f9922"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of General Medical Topic?",
+        "options": [
+          "Cellular energy production via mitochondrial dysfunction",
+          "Systemic lymphatic fluid absorption rate",
+          "Synaptic neurotransmission in the motor cortex",
+          "Hepatic glycogen synthesis rate"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with General Medical Topic, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7b2668e50d514dd86f9923"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected General Medical Topic?",
+        "options": [
+          "Localized tenderness and swelling over the affected area",
+          "Generalized petechiae and mucosal bleeding",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Hyper-resonance on thoracic percussion"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from General Medical Topic triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7b2668e50d514dd86f9924"
+      }
+    ],
+    "score": 5,
+    "totalQuestions": 5,
+    "accuracy": 100,
+    "difficulty": "medium",
+    "weakTopics": [],
+    "strongTopics": [
+      "General Medical Topic"
+    ],
+    "createdAt": "2026-08-11T13:40:56.052Z",
+    "_id": "6a7b2668e50d514dd86f991f"
+  },
+  {
+    "workspaceId": "6a7992b91b4663999c1a38e8",
+    "title": "Cardiac Cycle Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for General Medical Topic?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of General Medical Topic, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7b28b212292bb367949ced"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute General Medical Topic?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of General Medical Topic.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7b28b212292bb367949cee"
+      },
+      {
+        "question": "3. A patient presenting with advanced General Medical Topic is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from General Medical Topic leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "General Medical Topic",
+        "_id": "6a7b28b212292bb367949cef"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of General Medical Topic?",
+        "options": [
+          "Cellular energy production via mitochondrial dysfunction",
+          "Systemic lymphatic fluid absorption rate",
+          "Synaptic neurotransmission in the motor cortex",
+          "Hepatic glycogen synthesis rate"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with General Medical Topic, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7b28b212292bb367949cf0"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected General Medical Topic?",
+        "options": [
+          "Localized tenderness and swelling over the affected area",
+          "Generalized petechiae and mucosal bleeding",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Hyper-resonance on thoracic percussion"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from General Medical Topic triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7b28b212292bb367949cf1"
+      }
+    ],
+    "score": 0,
+    "totalQuestions": 5,
+    "accuracy": 0,
+    "difficulty": "medium",
+    "weakTopics": [],
+    "strongTopics": [],
+    "_id": "6a7b28b212292bb367949cec",
+    "createdAt": "2026-08-11T13:50:42.774Z"
+  },
+  {
+    "workspaceId": "6a7abc732484cef514229024",
+    "title": "Brachial Plexus Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for safe performance of\nneurosurgi?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of safe performance of\nneurosurgi, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b4c2ac1046e84e7b75fa9"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute safe performance of\nneurosurgi?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of safe performance of\nneurosurgi.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b4c2ac1046e84e7b75faa"
+      },
+      {
+        "question": "3. A patient presenting with advanced safe performance of\nneurosurgi is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from safe performance of\nneurosurgi leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b4c2ac1046e84e7b75fab"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of safe performance of\nneurosurgi?",
+        "options": [
+          "Cellular energy production via mitochondrial dysfunction",
+          "Systemic lymphatic fluid absorption rate",
+          "Synaptic neurotransmission in the motor cortex",
+          "Hepatic glycogen synthesis rate"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with safe performance of\nneurosurgi, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b4c2ac1046e84e7b75fac"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected safe performance of\nneurosurgi?",
+        "options": [
+          "Localized tenderness and swelling over the affected area",
+          "Generalized petechiae and mucosal bleeding",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Hyper-resonance on thoracic percussion"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from safe performance of\nneurosurgi triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b4c2ac1046e84e7b75fad"
+      }
+    ],
+    "score": 3,
+    "totalQuestions": 5,
+    "accuracy": 60,
+    "difficulty": "medium",
+    "weakTopics": [
+      "safe performance of\nneurosurgi"
+    ],
+    "strongTopics": [],
+    "createdAt": "2026-08-11T16:22:02.503Z",
+    "_id": "6a7b4c2ac1046e84e7b75fa8"
+  },
+  {
+    "workspaceId": "6a7abc732484cef514229024",
+    "title": "Brachial Plexus Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for safe performance of\nneurosurgi?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of safe performance of\nneurosurgi, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b4de30e669de9fe98e2e8"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute safe performance of\nneurosurgi?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of safe performance of\nneurosurgi.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b4de40e669de9fe98e2e9"
+      },
+      {
+        "question": "3. A patient presenting with advanced safe performance of\nneurosurgi is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from safe performance of\nneurosurgi leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b4de40e669de9fe98e2ea"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of safe performance of\nneurosurgi?",
+        "options": [
+          "Cellular energy production via mitochondrial dysfunction",
+          "Systemic lymphatic fluid absorption rate",
+          "Synaptic neurotransmission in the motor cortex",
+          "Hepatic glycogen synthesis rate"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with safe performance of\nneurosurgi, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b4de40e669de9fe98e2eb"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected safe performance of\nneurosurgi?",
+        "options": [
+          "Localized tenderness and swelling over the affected area",
+          "Generalized petechiae and mucosal bleeding",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Hyper-resonance on thoracic percussion"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from safe performance of\nneurosurgi triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b4de40e669de9fe98e2ec"
+      }
+    ],
+    "score": 0,
+    "totalQuestions": 5,
+    "accuracy": 0,
+    "difficulty": "medium",
+    "weakTopics": [],
+    "strongTopics": [],
+    "_id": "6a7b4de30e669de9fe98e2e7",
+    "createdAt": "2026-08-11T16:29:24.012Z"
+  },
+  {
+    "workspaceId": "6a7abc732484cef514229024",
+    "title": "Brachial Plexus Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for safe performance of\nneurosurgi?",
+        "options": [
+          "Decreased inflammatory cytokine activity",
+          "Increased localized tissue perfusion",
+          "Normal cerebrospinal fluid pressure",
+          "Elevated serum creatinine & urea"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of safe performance of\nneurosurgi, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b69c5258fa7a1a5674227"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute safe performance of\nneurosurgi?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression",
+          "High-dose aggressive surgical resection"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of safe performance of\nneurosurgi.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b69c5258fa7a1a5674228"
+      },
+      {
+        "question": "3. A patient presenting with advanced safe performance of\nneurosurgi is at highest risk for which of the following complications?",
+        "options": [
+          "Infectious bacterial meningitis",
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from safe performance of\nneurosurgi leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b69c5258fa7a1a5674229"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of safe performance of\nneurosurgi?",
+        "options": [
+          "Systemic lymphatic fluid absorption rate",
+          "Hepatic glycogen synthesis rate",
+          "Cellular energy production via mitochondrial dysfunction",
+          "Synaptic neurotransmission in the motor cortex"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with safe performance of\nneurosurgi, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b69c5258fa7a1a567422a"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected safe performance of\nneurosurgi?",
+        "options": [
+          "Generalized petechiae and mucosal bleeding",
+          "Localized tenderness and swelling over the affected area",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Hyper-resonance on thoracic percussion"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from safe performance of\nneurosurgi triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b69c5258fa7a1a567422b"
+      }
+    ],
+    "score": 0,
+    "totalQuestions": 5,
+    "accuracy": 0,
+    "difficulty": "medium",
+    "weakTopics": [],
+    "strongTopics": [],
+    "_id": "6a7b69c5258fa7a1a5674226",
+    "createdAt": "2026-08-11T18:28:21.842Z"
+  },
+  {
+    "workspaceId": "6a7abc732484cef514229024",
+    "title": "Brachial Plexus Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for safe performance of\nneurosurgi?",
+        "options": [
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure",
+          "Elevated serum creatinine & urea"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of safe performance of\nneurosurgi, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b7592a4cf6e560cc1909a"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute safe performance of\nneurosurgi?",
+        "options": [
+          "High-dose aggressive surgical resection",
+          "Immediate long-term immunosuppression",
+          "Symptomatic care and supportive hydration",
+          "Broad-spectrum antimicrobial therapy without cultures"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of safe performance of\nneurosurgi.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b7592a4cf6e560cc1909b"
+      },
+      {
+        "question": "3. A patient presenting with advanced safe performance of\nneurosurgi is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from safe performance of\nneurosurgi leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b7592a4cf6e560cc1909c"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of safe performance of\nneurosurgi?",
+        "options": [
+          "Hepatic glycogen synthesis rate",
+          "Synaptic neurotransmission in the motor cortex",
+          "Systemic lymphatic fluid absorption rate",
+          "Cellular energy production via mitochondrial dysfunction"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with safe performance of\nneurosurgi, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b7592a4cf6e560cc1909d"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected safe performance of\nneurosurgi?",
+        "options": [
+          "Bilateral papilledema and cranial nerve palsy",
+          "Hyper-resonance on thoracic percussion",
+          "Localized tenderness and swelling over the affected area",
+          "Generalized petechiae and mucosal bleeding"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from safe performance of\nneurosurgi triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b7592a4cf6e560cc1909e"
+      }
+    ],
+    "score": 0,
+    "totalQuestions": 5,
+    "accuracy": 0,
+    "difficulty": "medium",
+    "weakTopics": [],
+    "strongTopics": [],
+    "_id": "6a7b7592a4cf6e560cc19099",
+    "createdAt": "2026-08-11T19:18:42.582Z"
+  },
+  {
+    "workspaceId": "6a7b79320278fa6a95902ef4",
+    "title": "Circle of Willis Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for safe performance of\nneurosurgi?",
+        "options": [
+          "Increased localized tissue perfusion",
+          "Normal cerebrospinal fluid pressure",
+          "Decreased inflammatory cytokine activity",
+          "Elevated serum creatinine & urea"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of safe performance of\nneurosurgi, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b798b84738c171cedf4e0"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute safe performance of\nneurosurgi?",
+        "options": [
+          "High-dose aggressive surgical resection",
+          "Immediate long-term immunosuppression",
+          "Symptomatic care and supportive hydration",
+          "Broad-spectrum antimicrobial therapy without cultures"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of safe performance of\nneurosurgi.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b798b84738c171cedf4e1"
+      },
+      {
+        "question": "3. A patient presenting with advanced safe performance of\nneurosurgi is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Acute respiratory alkalosis",
+          "Spontaneous resolution within 24 hours",
+          "Infectious bacterial meningitis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from safe performance of\nneurosurgi leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b798b84738c171cedf4e2"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of safe performance of\nneurosurgi?",
+        "options": [
+          "Hepatic glycogen synthesis rate",
+          "Systemic lymphatic fluid absorption rate",
+          "Cellular energy production via mitochondrial dysfunction",
+          "Synaptic neurotransmission in the motor cortex"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with safe performance of\nneurosurgi, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b798b84738c171cedf4e3"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected safe performance of\nneurosurgi?",
+        "options": [
+          "Hyper-resonance on thoracic percussion",
+          "Generalized petechiae and mucosal bleeding",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Localized tenderness and swelling over the affected area"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from safe performance of\nneurosurgi triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b798b84738c171cedf4e4"
+      }
+    ],
+    "score": 0,
+    "totalQuestions": 5,
+    "accuracy": 0,
+    "difficulty": "medium",
+    "weakTopics": [
+      "safe performance of\nneurosurgi"
+    ],
+    "strongTopics": [],
+    "createdAt": "2026-08-11T19:35:39.482Z",
+    "_id": "6a7b798b84738c171cedf4df"
+  },
+  {
+    "workspaceId": "6a7992b91b4663999c1a38e8",
+    "topic": "Cardiac Cycle",
+    "title": "Cardiac Cycle Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for General Medical Topic?",
+        "options": [
+          "Normal cerebrospinal fluid pressure",
+          "Elevated serum creatinine & urea",
+          "Decreased inflammatory cytokine activity",
+          "Increased localized tissue perfusion"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of General Medical Topic, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7b7ff8dcd01510b94277cc"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute General Medical Topic?",
+        "options": [
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression",
+          "Symptomatic care and supportive hydration"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of General Medical Topic.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7b7ff8dcd01510b94277cd"
+      },
+      {
+        "question": "3. A patient presenting with advanced General Medical Topic is at highest risk for which of the following complications?",
+        "options": [
+          "Infectious bacterial meningitis",
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from General Medical Topic leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "General Medical Topic",
+        "_id": "6a7b7ff8dcd01510b94277ce"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of General Medical Topic?",
+        "options": [
+          "Hepatic glycogen synthesis rate",
+          "Cellular energy production via mitochondrial dysfunction",
+          "Synaptic neurotransmission in the motor cortex",
+          "Systemic lymphatic fluid absorption rate"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with General Medical Topic, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "General Medical Topic",
+        "_id": "6a7b7ff8dcd01510b94277cf"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected General Medical Topic?",
+        "options": [
+          "Localized tenderness and swelling over the affected area",
+          "Hyper-resonance on thoracic percussion",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Generalized petechiae and mucosal bleeding"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from General Medical Topic triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "General Medical Topic",
+        "_id": "6a7b7ff8dcd01510b94277d0"
+      }
+    ],
+    "score": 1,
+    "totalQuestions": 5,
+    "accuracy": 20,
+    "difficulty": "medium",
+    "weakTopics": [
+      "General Medical Topic"
+    ],
+    "strongTopics": [],
+    "createdAt": "2026-08-11T20:03:04.453Z",
+    "_id": "6a7b7ff8dcd01510b94277cb"
+  },
+  {
+    "workspaceId": "6a7abc732484cef514229024",
+    "topic": "Brachial PlexusANATOMICAL TERMINOLOGY ",
+    "title": "Brachial PlexusANATOMICAL TERMINOLOGY  Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for safe performance of\nneurosurgi?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Normal cerebrospinal fluid pressure",
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of safe performance of\nneurosurgi, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b81c6b51495facc8d1b21"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute safe performance of\nneurosurgi?",
+        "options": [
+          "Immediate long-term immunosuppression",
+          "High-dose aggressive surgical resection",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Symptomatic care and supportive hydration"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of safe performance of\nneurosurgi.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b81c6b51495facc8d1b22"
+      },
+      {
+        "question": "3. A patient presenting with advanced safe performance of\nneurosurgi is at highest risk for which of the following complications?",
+        "options": [
+          "Spontaneous resolution within 24 hours",
+          "Infectious bacterial meningitis",
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from safe performance of\nneurosurgi leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b81c6b51495facc8d1b23"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of safe performance of\nneurosurgi?",
+        "options": [
+          "Synaptic neurotransmission in the motor cortex",
+          "Cellular energy production via mitochondrial dysfunction",
+          "Hepatic glycogen synthesis rate",
+          "Systemic lymphatic fluid absorption rate"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with safe performance of\nneurosurgi, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b81c6b51495facc8d1b24"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected safe performance of\nneurosurgi?",
+        "options": [
+          "Bilateral papilledema and cranial nerve palsy",
+          "Localized tenderness and swelling over the affected area",
+          "Generalized petechiae and mucosal bleeding",
+          "Hyper-resonance on thoracic percussion"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from safe performance of\nneurosurgi triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b81c6b51495facc8d1b25"
+      }
+    ],
+    "score": 0,
+    "totalQuestions": 5,
+    "accuracy": 0,
+    "difficulty": "medium",
+    "weakTopics": [
+      "safe performance of\nneurosurgi"
+    ],
+    "strongTopics": [],
+    "createdAt": "2026-08-11T20:10:46.701Z",
+    "_id": "6a7b81c6b51495facc8d1b20"
+  },
+  {
+    "workspaceId": "6a7abc732484cef514229024",
+    "topic": "Brachial PlexusANATOMICAL TERMINOLOGY ",
+    "title": "Brachial PlexusANATOMICAL TERMINOLOGY  Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for safe performance of\nneurosurgi?",
+        "options": [
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure",
+          "Elevated serum creatinine & urea"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of safe performance of\nneurosurgi, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b81faa2fac9f0cae0d4c1"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute safe performance of\nneurosurgi?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "Immediate long-term immunosuppression",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "High-dose aggressive surgical resection"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of safe performance of\nneurosurgi.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b81faa2fac9f0cae0d4c2"
+      },
+      {
+        "question": "3. A patient presenting with advanced safe performance of\nneurosurgi is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours",
+          "Acute respiratory alkalosis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from safe performance of\nneurosurgi leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b81faa2fac9f0cae0d4c3"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of safe performance of\nneurosurgi?",
+        "options": [
+          "Hepatic glycogen synthesis rate",
+          "Systemic lymphatic fluid absorption rate",
+          "Cellular energy production via mitochondrial dysfunction",
+          "Synaptic neurotransmission in the motor cortex"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with safe performance of\nneurosurgi, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b81faa2fac9f0cae0d4c4"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected safe performance of\nneurosurgi?",
+        "options": [
+          "Hyper-resonance on thoracic percussion",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Generalized petechiae and mucosal bleeding",
+          "Localized tenderness and swelling over the affected area"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from safe performance of\nneurosurgi triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b81faa2fac9f0cae0d4c5"
+      }
+    ],
+    "score": 0,
+    "totalQuestions": 5,
+    "accuracy": 0,
+    "difficulty": "medium",
+    "weakTopics": [],
+    "strongTopics": [],
+    "_id": "6a7b81faa2fac9f0cae0d4c0",
+    "createdAt": "2026-08-11T20:11:38.733Z"
+  },
+  {
+    "workspaceId": "6a7abc732484cef514229024",
+    "topic": "heart",
+    "title": "heart Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for safe performance of\nneurosurgi?",
+        "options": [
+          "Elevated serum creatinine & urea",
+          "Decreased inflammatory cytokine activity",
+          "Normal cerebrospinal fluid pressure",
+          "Increased localized tissue perfusion"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of safe performance of\nneurosurgi, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b82dce75a2bfc4bdf3828"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute safe performance of\nneurosurgi?",
+        "options": [
+          "Symptomatic care and supportive hydration",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression",
+          "High-dose aggressive surgical resection"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of safe performance of\nneurosurgi.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b82dce75a2bfc4bdf3829"
+      },
+      {
+        "question": "3. A patient presenting with advanced safe performance of\nneurosurgi is at highest risk for which of the following complications?",
+        "options": [
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Acute respiratory alkalosis",
+          "Spontaneous resolution within 24 hours",
+          "Infectious bacterial meningitis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from safe performance of\nneurosurgi leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b82dce75a2bfc4bdf382a"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of safe performance of\nneurosurgi?",
+        "options": [
+          "Systemic lymphatic fluid absorption rate",
+          "Hepatic glycogen synthesis rate",
+          "Cellular energy production via mitochondrial dysfunction",
+          "Synaptic neurotransmission in the motor cortex"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with safe performance of\nneurosurgi, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b82dce75a2bfc4bdf382b"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected safe performance of\nneurosurgi?",
+        "options": [
+          "Hyper-resonance on thoracic percussion",
+          "Localized tenderness and swelling over the affected area",
+          "Generalized petechiae and mucosal bleeding",
+          "Bilateral papilledema and cranial nerve palsy"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from safe performance of\nneurosurgi triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7b82dce75a2bfc4bdf382c"
+      }
+    ],
+    "score": 1,
+    "totalQuestions": 5,
+    "accuracy": 20,
+    "difficulty": "medium",
+    "weakTopics": [
+      "safe performance of\nneurosurgi"
+    ],
+    "strongTopics": [],
+    "createdAt": "2026-08-11T20:15:24.885Z",
+    "_id": "6a7b82dce75a2bfc4bdf3827"
+  },
+  {
+    "workspaceId": "6a7abc732484cef514229024",
+    "topic": "Brachial Plexus",
+    "title": "Brachial Plexus Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for safe performance of\nneurosurgi?",
+        "options": [
+          "Increased localized tissue perfusion",
+          "Decreased inflammatory cytokine activity",
+          "Elevated serum creatinine & urea",
+          "Normal cerebrospinal fluid pressure"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of safe performance of\nneurosurgi, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7c2a4febb0a3fa2cb3b5d1"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute safe performance of\nneurosurgi?",
+        "options": [
+          "High-dose aggressive surgical resection",
+          "Symptomatic care and supportive hydration",
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of safe performance of\nneurosurgi.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7c2a4febb0a3fa2cb3b5d2"
+      },
+      {
+        "question": "3. A patient presenting with advanced safe performance of\nneurosurgi is at highest risk for which of the following complications?",
+        "options": [
+          "Acute respiratory alkalosis",
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Spontaneous resolution within 24 hours",
+          "Infectious bacterial meningitis"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from safe performance of\nneurosurgi leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7c2a4febb0a3fa2cb3b5d3"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of safe performance of\nneurosurgi?",
+        "options": [
+          "Systemic lymphatic fluid absorption rate",
+          "Synaptic neurotransmission in the motor cortex",
+          "Hepatic glycogen synthesis rate",
+          "Cellular energy production via mitochondrial dysfunction"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with safe performance of\nneurosurgi, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7c2a4febb0a3fa2cb3b5d4"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected safe performance of\nneurosurgi?",
+        "options": [
+          "Bilateral papilledema and cranial nerve palsy",
+          "Localized tenderness and swelling over the affected area",
+          "Hyper-resonance on thoracic percussion",
+          "Generalized petechiae and mucosal bleeding"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from safe performance of\nneurosurgi triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7c2a4febb0a3fa2cb3b5d5"
+      }
+    ],
+    "score": 0,
+    "totalQuestions": 5,
+    "accuracy": 0,
+    "difficulty": "medium",
+    "weakTopics": [
+      "safe performance of\nneurosurgi"
+    ],
+    "strongTopics": [],
+    "createdAt": "2026-08-12T08:09:51.220Z",
+    "_id": "6a7c2a4febb0a3fa2cb3b5d0"
+  },
+  {
+    "workspaceId": "6a7abc732484cef514229024",
+    "topic": "Brachial Plexus",
+    "title": "Brachial Plexus Quiz (medium)",
+    "questions": [
+      {
+        "question": "1. Which of the following is considered a primary diagnostic marker for safe performance of\nneurosurgi?",
+        "options": [
+          "Normal cerebrospinal fluid pressure",
+          "Elevated serum creatinine & urea",
+          "Decreased inflammatory cytokine activity",
+          "Increased localized tissue perfusion"
+        ],
+        "correctAnswer": "Elevated serum creatinine & urea",
+        "explanation": "In standard clinical assessments of safe performance of\nneurosurgi, biomarkers reflect organ clearance capacity. Elevated values point directly to clearance failure.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7c2a7507d4b0dc56b52b0a"
+      },
+      {
+        "question": "2. What is the recommended first-line therapeutic management for acute safe performance of\nneurosurgi?",
+        "options": [
+          "Broad-spectrum antimicrobial therapy without cultures",
+          "Symptomatic care and supportive hydration",
+          "High-dose aggressive surgical resection",
+          "Immediate long-term immunosuppression"
+        ],
+        "correctAnswer": "Symptomatic care and supportive hydration",
+        "explanation": "Supportive hydration stabilizes circulatory volume and ensures organ perfusion during acute exacerbation of safe performance of\nneurosurgi.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7c2a7507d4b0dc56b52b0b"
+      },
+      {
+        "question": "3. A patient presenting with advanced safe performance of\nneurosurgi is at highest risk for which of the following complications?",
+        "options": [
+          "Acute respiratory alkalosis",
+          "Chronic fibrosis and irreversible tissue remodelling",
+          "Infectious bacterial meningitis",
+          "Spontaneous resolution within 24 hours"
+        ],
+        "correctAnswer": "Chronic fibrosis and irreversible tissue remodelling",
+        "explanation": "Persistent unchecked inflammation from safe performance of\nneurosurgi leads to fibroblast recruitment, deposition of extracellular matrix, and eventual scarring.",
+        "difficulty": "hard",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7c2a7507d4b0dc56b52b0c"
+      },
+      {
+        "question": "4. Which physiological pathway is most directly disrupted in advanced stages of safe performance of\nneurosurgi?",
+        "options": [
+          "Synaptic neurotransmission in the motor cortex",
+          "Cellular energy production via mitochondrial dysfunction",
+          "Systemic lymphatic fluid absorption rate",
+          "Hepatic glycogen synthesis rate"
+        ],
+        "correctAnswer": "Cellular energy production via mitochondrial dysfunction",
+        "explanation": "Mitochondrial damage is a key cellular hallmark in severe tissue injury associated with safe performance of\nneurosurgi, causing ATP depletion.",
+        "difficulty": "medium",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7c2a7507d4b0dc56b52b0d"
+      },
+      {
+        "question": "5. What is the classical clinical sign observed during physical examination of a patient with suspected safe performance of\nneurosurgi?",
+        "options": [
+          "Localized tenderness and swelling over the affected area",
+          "Bilateral papilledema and cranial nerve palsy",
+          "Hyper-resonance on thoracic percussion",
+          "Generalized petechiae and mucosal bleeding"
+        ],
+        "correctAnswer": "Localized tenderness and swelling over the affected area",
+        "explanation": "Localized inflammation from safe performance of\nneurosurgi triggers classical cardinal signs of inflammation, including rubor, calor, tumor, and dolor.",
+        "difficulty": "easy",
+        "topic": "safe performance of\nneurosurgi",
+        "_id": "6a7c2a7507d4b0dc56b52b0e"
+      }
+    ],
+    "score": 0,
+    "totalQuestions": 5,
+    "accuracy": 0,
+    "difficulty": "medium",
+    "weakTopics": [],
+    "strongTopics": [],
+    "_id": "6a7c2a7507d4b0dc56b52b09",
+    "createdAt": "2026-08-12T08:10:29.084Z"
+  }
+]

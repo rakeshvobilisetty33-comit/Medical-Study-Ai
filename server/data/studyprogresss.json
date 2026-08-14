@@ -1,0 +1,56 @@
+[
+  {
+    "userId": "default_user",
+    "totalStudyTime": 333,
+    "topicsStudiedCount": 2,
+    "topicsCompleted": [
+      "Circle of Willis",
+      "Brachial Plexus"
+    ],
+    "questionsSolved": 31,
+    "flashcardsReviewed": 4,
+    "averageQuizScore": 0,
+    "dailyStreak": 1,
+    "lastStudyDate": "2026-08-14T06:56:52.911Z",
+    "subjectProgress": {},
+    "weeklyStudyMinutes": [
+      {
+        "day": "Mon",
+        "minutes": 0,
+        "_id": "6a799397e5c766bdca585377"
+      },
+      {
+        "day": "Tue",
+        "minutes": 196,
+        "_id": "6a799397e5c766bdca585378"
+      },
+      {
+        "day": "Wed",
+        "minutes": 136,
+        "_id": "6a799397e5c766bdca585379"
+      },
+      {
+        "day": "Thu",
+        "minutes": 0,
+        "_id": "6a799397e5c766bdca58537a"
+      },
+      {
+        "day": "Fri",
+        "minutes": 1,
+        "_id": "6a799397e5c766bdca58537b"
+      },
+      {
+        "day": "Sat",
+        "minutes": 0,
+        "_id": "6a799397e5c766bdca58537c"
+      },
+      {
+        "day": "Sun",
+        "minutes": 0,
+        "_id": "6a799397e5c766bdca58537d"
+      }
+    ],
+    "createdAt": "2026-08-10T09:02:15.788Z",
+    "_id": "6a799397e5c766bdca585376"
+  }
+]

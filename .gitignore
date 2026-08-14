@@ -24,10 +24,12 @@ Thumbs.db
 build/
 uploads/
 server/uploads/
-server/data/
+
 .env.*
 !.env.example
 scratch/
 .agents/
 
 
+
+.vercel

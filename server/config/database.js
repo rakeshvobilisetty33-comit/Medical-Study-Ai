@@ -23,16 +23,53 @@ const connectDB = async () => {
 };
 
 function setupFileDBMock() {
-  const DATA_DIR = path.join(process.cwd(), 'data');
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+  const isVercel = Boolean(process.env.VERCEL);
+  const seedDir = fs.existsSync(path.join(process.cwd(), 'server', 'data'))
+    ? path.join(process.cwd(), 'server', 'data')
+    : path.join(process.cwd(), 'data');
+
+  const targetDir = isVercel
+    ? '/tmp/data'
+    : seedDir;
+
+  if (!fs.existsSync(targetDir)) {
+    try {
+      fs.mkdirSync(targetDir, { recursive: true });
+    } catch (e) {
+      console.warn('Could not create target DB directory:', e.message);
+    }
   }
 
-  const getFilePath = (modelName) => path.join(DATA_DIR, `${modelName.toLowerCase()}s.json`);
+  const getFilePath = (modelName) => {
+    const fileName = `${modelName.toLowerCase()}s.json`;
+    const targetFile = path.join(targetDir, fileName);
+    if (isVercel && !fs.existsSync(targetFile)) {
+      const seedFile = path.join(seedDir, fileName);
+      if (fs.existsSync(seedFile)) {
+        try {
+          fs.copyFileSync(seedFile, targetFile);
+        } catch (e) {
+          console.warn(`Could not copy seed file ${seedFile}:`, e.message);
+        }
+      }
+    }
+    return targetFile;
+  };
 
   const readData = (modelName) => {
     const filePath = getFilePath(modelName);
-    if (!fs.existsSync(filePath)) return [];
+    if (!fs.existsSync(filePath)) {
+      const fileName = `${modelName.toLowerCase()}s.json`;
+      const seedFile = path.join(seedDir, fileName);
+      if (fs.existsSync(seedFile)) {
+        try {
+          return JSON.parse(fs.readFileSync(seedFile, 'utf8'));
+        } catch {
+          return [];
+        }
+      }
+      return [];
+    }
     try {
       return JSON.parse(fs.readFileSync(filePath, 'utf8'));
     } catch {
@@ -41,9 +78,14 @@ function setupFileDBMock() {
   };
 
   const writeData = (modelName, data) => {
-    const filePath = getFilePath(modelName);
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+    try {
+      const filePath = getFilePath(modelName);
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+    } catch (e) {
+      console.warn(`Write to mock DB skipped (${modelName}):`, e.message);
+    }
   };
+
 
   // Helper to create chained query mocks (supporting sort, select, limit, lean, populate)
   const createQueryMock = (result) => {
