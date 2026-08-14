@@ -53,7 +53,12 @@ app.use((req, res, next) => {
 // Global Error Handler
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`MedStudy AI Server running on port ${PORT}`);
-});
+export default app;
+
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`MedStudy AI Server running on port ${PORT}`);
+  });
+}
+
