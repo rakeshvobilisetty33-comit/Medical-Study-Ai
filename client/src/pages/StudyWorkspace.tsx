@@ -263,7 +263,8 @@ const StudyWorkspace: React.FC<StudyWorkspaceProps> = ({
         </div>
 
         {/* Mobile responsive panel selectors */}
-        <div className="flex sm:hidden bg-gray-100 dark:bg-slate-800 p-0.5 rounded-xl text-xs font-bold">
+        <div className="flex md:hidden bg-gray-100 dark:bg-slate-800 p-0.5 rounded-xl text-xs font-bold">
+
           <button 
             onClick={() => setMobileTab('sources')}
             className={`px-3 py-1.5 rounded-lg transition-all ${mobileTab === 'sources' ? 'bg-white dark:bg-slate-700 text-medical-600 dark:text-medical-400' : 'text-gray-500'}`}

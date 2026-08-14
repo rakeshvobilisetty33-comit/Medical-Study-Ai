@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, Search, Bell, Settings as SettingsIcon, LogOut, Check } from 'lucide-react';
+import { Sun, Moon, Search, Bell, Settings as SettingsIcon, LogOut, Check, Menu } from 'lucide-react';
 import { storage } from '../utils/storage';
 import { studyAPI } from '../services/api';
 import { Reminder } from '../types/study';
@@ -9,9 +9,10 @@ interface NavbarProps {
   onLogout: () => void;
   onOpenSearch: () => void;
   onOpenSettings: () => void;
+  onToggleMobileSidebar?: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ userName, onLogout, onOpenSearch, onOpenSettings }) => {
+const Navbar: React.FC<NavbarProps> = ({ userName, onLogout, onOpenSearch, onOpenSettings, onToggleMobileSidebar }) => {
   const [theme, setTheme] = useState<'light' | 'dark' | 'system'>(storage.getTheme());
   const [reminders, setReminders] = useState<Reminder[]>([]);
   const [showReminders, setShowReminders] = useState(false);
@@ -49,19 +50,29 @@ const Navbar: React.FC<NavbarProps> = ({ userName, onLogout, onOpenSearch, onOpe
   }, []);
 
   return (
-    <nav className="h-16 border-b border-gray-200 dark:border-slate-800 bg-white/80 dark:bg-darkbg-100/80 backdrop-blur-md px-6 flex items-center justify-between sticky top-0 z-40 transition-colors duration-200">
+    <nav className="h-16 border-b border-gray-200 dark:border-slate-800 bg-white/80 dark:bg-darkbg-100/80 backdrop-blur-md px-4 sm:px-6 flex items-center justify-between sticky top-0 z-40 transition-colors duration-200 shrink-0">
       {/* Brand Logo & Name */}
-      <div className="flex items-center gap-3">
-        <div className="bg-medical-500 text-white p-2 rounded-xl active-pulse">
+      <div className="flex items-center gap-2.5 sm:gap-3">
+        {onToggleMobileSidebar && (
+          <button
+            onClick={onToggleMobileSidebar}
+            className="p-2 -ml-1 text-gray-600 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-xl transition md:hidden"
+            title="Toggle Navigation Drawer"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+        )}
+        <div className="bg-medical-500 text-white p-2 rounded-xl active-pulse shrink-0">
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" className="hidden" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
         </div>
-        <span className="font-bold text-lg font-display tracking-tight text-gray-800 dark:text-gray-100">
+        <span className="font-bold text-base sm:text-lg font-display tracking-tight text-gray-800 dark:text-gray-100 truncate">
           MedStudy <span className="text-medical-500">AI</span>
         </span>
       </div>
+
 
       {/* Center Navigation / Actions */}
       <div className="flex-1 max-w-lg mx-8 hidden md:block">

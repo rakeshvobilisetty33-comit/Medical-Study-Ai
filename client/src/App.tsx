@@ -19,6 +19,7 @@ const App: React.FC = () => {
 
   const [activePage, setActivePage] = useState<string>('dashboard');
   const [selectedWorkspaceId, setSelectedWorkspaceId] = useState<string>('');
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   
   // Study Space state
   const [studySpaceWorkspaceId, setStudySpaceWorkspaceId] = useState<string>('');
@@ -84,6 +85,7 @@ const App: React.FC = () => {
 
   const handleNavigatePage = (page: string, id?: string) => {
     setActivePage(page);
+    setIsMobileSidebarOpen(false);
     if (id) {
       setSelectedWorkspaceId(id);
       storage.setLastWorkspace(id);
@@ -138,10 +140,11 @@ const App: React.FC = () => {
         onLogout={handleLogout}
         onOpenSearch={() => setShowSearchModal(true)}
         onOpenSettings={() => handleNavigatePage('settings')}
+        onToggleMobileSidebar={() => setIsMobileSidebarOpen(prev => !prev)}
       />
 
       {/* Main Workspace Frame */}
-      <div className="flex-1 flex overflow-hidden min-h-0">
+      <div className="flex-1 flex overflow-hidden min-h-0 relative">
         
         {/* Navigation Sidebar */}
         <Sidebar
@@ -150,7 +153,10 @@ const App: React.FC = () => {
           selectedWorkspaceId={selectedWorkspaceId}
           refreshTrigger={workspacesRefresh}
           onOpenCreateWorkspace={() => handleOpenCreateWorkspace()}
+          isMobileOpen={isMobileSidebarOpen}
+          onCloseMobile={() => setIsMobileSidebarOpen(false)}
         />
+
 
         {/* Content Viewer Panel */}
         <main className={`flex-1 min-h-0 ${activePage === 'workspace' ? 'overflow-hidden' : 'overflow-y-auto'}`}>

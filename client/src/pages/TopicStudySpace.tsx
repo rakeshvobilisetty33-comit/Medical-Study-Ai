@@ -518,7 +518,8 @@ const TopicStudySpace: React.FC<TopicStudySpaceProps> = ({
       </div>
 
       {/* Main Two-Column Layout Panel */}
-      <div className="flex-1 flex overflow-hidden min-h-0">
+      <div className="flex-1 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden min-h-0">
+
         
         {/* Left Column: Tabbed Study Area */}
         <div className="flex-1 flex flex-col min-w-0 overflow-y-auto border-r border-gray-150 dark:border-slate-800 p-6 space-y-6">
@@ -1040,7 +1041,8 @@ const TopicStudySpace: React.FC<TopicStudySpaceProps> = ({
         </div>
 
         {/* Right Column: AI Study Assistant chat panel */}
-        <div className="w-80 shrink-0 bg-white dark:bg-slate-900 flex flex-col overflow-hidden min-h-0 border-l border-gray-150 dark:border-slate-800">
+        <div className="w-full lg:w-80 shrink-0 bg-white dark:bg-slate-900 flex flex-col overflow-hidden min-h-0 border-t lg:border-t-0 lg:border-l border-gray-150 dark:border-slate-800 h-96 lg:h-auto">
+
           
           {/* Assistant Header */}
           <div className="p-4 border-b border-gray-100 dark:border-slate-800 shrink-0 flex items-center gap-2">
